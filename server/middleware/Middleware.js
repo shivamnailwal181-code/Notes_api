@@ -14,7 +14,7 @@ const Middleware = async (req, res, next) => {
         console.log(decoded)
 
         if (!decoded) {
-            return res.status(401).json({ success: false, message: "Wrong token" })
+            return res.status(401).json({ success: false, message: "Wrong token cant access" })
         }
         const user = await User.findById({ _id: decoded.id })
 
